@@ -1,3 +1,4 @@
+
 function getBathValue() {
     var uiBathrooms = document.getElementsByName("uiBathrooms");
     for(var i in uiBathrooms) {
@@ -43,10 +44,12 @@ function onClickedEstimatePrice() {
 
 function onPageLoad(){
     console.log( "document loaded" );
+    var backend_url = "https://serverbackend-v45y.onrender.com";
     var url = backend_url + "/get_location_names"; // Use this if you are NOT using nginx which is first 7 tutorials
 //   var url = "/api/get_location_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
   $.get(url,function(data, status) {
       console.log("got response for get_location_names request");
+      console.log("Locations received from backend:", data.locations);
       if(data) {
           var locations = data.locations;
           var uiLocations = document.getElementById("uiLocations");
