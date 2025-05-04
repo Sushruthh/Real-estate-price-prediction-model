@@ -130,14 +130,23 @@ h2 {
 
 body, html {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Responsive styles for mobile devices */
 @media (max-width: 600px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
   .form {
     max-width: 90%;
-    padding-left: 8px;
-    margin: 8px auto;
+    padding-left: 0;
+    margin: 0 auto;
   }
 
   .area,
